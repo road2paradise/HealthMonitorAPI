@@ -5,6 +5,12 @@
       "type": "mssql.azure",
       "connectionId": "sqlDatabase",
       "secretStore": "AzureAppSettings"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "HealthMonitorAPIContextConnection",
+      "suggestion": "true",
+      "ignored": "true"
     }
   }
 }

@@ -15,7 +15,7 @@ namespace HealthMonitorAPI.Authentication
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserID { get; set; }
-        public ICollection<Appointment> Appointment { get; set; }
+
 
     }
 }

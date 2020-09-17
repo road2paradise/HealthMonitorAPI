@@ -14,6 +14,14 @@
     <Compile Remove="Migrations\20200915212650_DefaultValueUserRole.Designer.cs" />
     <Compile Remove="Migrations\20200915213119_DefaultValueUserRole.cs" />
     <Compile Remove="Migrations\20200915213119_DefaultValueUserRole.Designer.cs" />
+    <Compile Remove="Migrations\20200916022501_addedRelationship.cs" />
+    <Compile Remove="Migrations\20200916022501_addedRelationship.Designer.cs" />
+    <Compile Remove="Migrations\20200916024105_addedRelationship1.cs" />
+    <Compile Remove="Migrations\20200916024105_addedRelationship1.Designer.cs" />
+    <Compile Remove="Migrations\20200916024145_addedRelationship1.cs" />
+    <Compile Remove="Migrations\20200916024145_addedRelationship1.Designer.cs" />
+    <Compile Remove="Migrations\20200916024222_addedRelationship1.cs" />
+    <Compile Remove="Migrations\20200916024222_addedRelationship1.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

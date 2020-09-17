@@ -10,6 +10,7 @@ namespace HealthMonitorAPI.Models
 {
     public class AppDatabase: IdentityDbContext<ApplicationUser>
     {        // Defining each table in the database.
+
         public AppDatabase(DbContextOptions<AppDatabase> options) : base(options)
         {
 
@@ -18,7 +19,6 @@ namespace HealthMonitorAPI.Models
         {
             base.OnModelCreating(builder);
         }
-        public DbSet<User> User { get; set; }
         public DbSet<Appointment> Appointment { get; set; }
 
 

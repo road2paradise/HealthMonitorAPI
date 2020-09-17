@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HealthMonitorAPI.Authentication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace HealthMonitorAPI.Models
 {
-    public class Appointment       
-    { 
+    public class Appointment
+    {
 
         // One user can have many appointments.
         [Required]
@@ -24,12 +25,7 @@ namespace HealthMonitorAPI.Models
         public string AppointmentText { get; set; }
         [Required]
         public string DoctorsName { get; set; }
-        // FK
-        [Required]
-        public int UserID { get; set; }
-        [Required]
-        public string CreatedBy { get; set; }
-
+        public ApplicationUser ApplicationUser { get; set; }
 
     }
 }

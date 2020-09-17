@@ -4,14 +4,16 @@ using HealthMonitorAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HealthMonitorAPI.Migrations
 {
     [DbContext(typeof(AppDatabase))]
-    partial class AppDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20200916043007_addedRelationship4")]
+    partial class addedRelationship4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -115,11 +117,43 @@ namespace HealthMonitorAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("UserID")
+                        .HasColumnType("int");
+
                     b.HasKey("AppointmentID");
 
                     b.HasIndex("ApplicationUserId");
 
+                    b.HasIndex("UserID");
+
                     b.ToTable("Appointment");
+                });
+
+            modelBuilder.Entity("HealthMonitorAPI.Models.User", b =>
+                {
+                    b.Property<int>("UserID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("UserEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserPassword")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserRoles")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserID");
+
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -258,6 +292,10 @@ namespace HealthMonitorAPI.Migrations
                     b.HasOne("HealthMonitorAPI.Authentication.ApplicationUser", "ApplicationUser")
                         .WithMany()
                         .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("HealthMonitorAPI.Models.User", null)
+                        .WithMany("Appointment")
+                        .HasForeignKey("UserID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
