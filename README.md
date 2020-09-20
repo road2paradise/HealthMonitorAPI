@@ -60,6 +60,8 @@ There are 2 main sets of controllers with 8 total endpoints, Appointment and Aut
 
 Appointment endpoints are protected by Authorize, which is a package which allows only authenticated users to access these routes. This is checked by comparing the JWT that is stored in the server with that which is being sent from the front-end. Once this authentication is complete the end-points are then exposed to the user to access their own personal data.
 
+All these endpoints are protected, only authenticated users with a valid JWT token can access.
+
 These are my basic CRUD Rest API endpoints.
 
 The routes are shown below:
@@ -102,3 +104,7 @@ A MySQL server has been created on Microsoft Azure and the tables have been set 
 - ResponsiveUI (Web + Mobile)
 
 My web-app is able to be viewed comfortably and has a responsive UI for switching between Web and Mobile interfaces. There is a hamburger stack for Navigation tools.
+
+- Security
+
+The appointment endpoints are all protected by authentication, valid JWT tokens are required to access these endpoints.
