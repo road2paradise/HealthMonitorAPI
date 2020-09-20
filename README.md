@@ -64,7 +64,7 @@ These are my basic CRUD Rest API endpoints.
 
 The routes are shown below:
 
-<img src="./HealthMonitorAPI/img/appointmentEndpoints.png">
+<img src="./HealthMonitorAPI/img/appointmentEndpoints.PNG">
 
 ### Authenticate
 
